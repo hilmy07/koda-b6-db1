@@ -1,6 +1,7 @@
 ## ERD Perpustakaan Sederhana
 
-<img width="767" height="752" alt="image" src="https://github.com/user-attachments/assets/3169112c-92e5-4a92-a408-7830d3dfc6cd" />
+<img width="1262" height="688" alt="image" src="https://github.com/user-attachments/assets/278e3df2-097a-433a-9073-fd086c018dfd" />
+
 
 Rak buku memiliki atribut :
 - ID_rak_buku : digunakan untuk mengetahui identitas rak_buku tertentu, maka dari itu atribut ini sebagai primary key. 
