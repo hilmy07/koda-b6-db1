@@ -25,6 +25,8 @@ erDiagram
         int ID_kategori FK
         int ID_peminjam FK
         int ID_petugas FK
+        string Tanggal_peminjaman
+        string Tanggal_pengembalian
     }
 
     Petugas || -- || Buku : "memberi izin pinjam"
