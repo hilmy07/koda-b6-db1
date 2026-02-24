@@ -4,40 +4,47 @@ id: a4643532-e86a-4172-a145-7a93d8150bd9
 ---
 erDiagram
 
-    Rak_buku ||--o{ Kategori : "Memiliki"
-    Rak_buku {
-        int ID_rak_buku PK
-        string Nama
-        int ID_kategori FK
+    RAK_BUKU ||--o{ BUKU : memiliki
+    KATEGORI ||--o{ BUKU : memiliki
+    BUKU ||--o{ PEMINJAMAN : dipinjam
+    PETUGAS ||--o{ PEMINJAMAN : memproses
+    PEMINJAM ||--o{ PEMINJAMAN : melakukan
+
+    RAK_BUKU {
+        int id_rak_buku PK
+        string nama
     }
 
-    Kategori || -- || Buku : "Memiliki"
-    Kategori {
-        int ID_kategori PK
-        string Nama
+    KATEGORI {
+        int id_kategori PK
+        string nama
     }
 
-    Buku {
-        int ID_buku PK
-        string Nama
-        string Tahun_terbit
-        string Pengarang
-        int ID_kategori FK
-        int ID_peminjam FK
-        int ID_petugas FK
-        string Tanggal_peminjaman
-        string Tanggal_pengembalian
+    BUKU {
+        int id_buku PK
+        string nama
+        int tahun_terbit
+        string pengarang
+        int id_rak_buku FK
+        int id_kategori FK
     }
 
-    Petugas || -- || Buku : "memberi izin pinjam"
-    Petugas {
-        int ID_petugas PK
-        string Nama
+    PETUGAS {
+        int id_petugas PK
+        string nama
     }
 
-    Peminjam || -- || Buku : "peminjaman"
-    Peminjam {
-        int ID_peminjam
-        string Nama
+    PEMINJAM {
+        int id_peminjam PK
+        string nama
+    }
+
+    PEMINJAMAN {
+        int id_peminjaman PK
+        int id_buku FK
+        int id_peminjam FK
+        int id_petugas FK
+        date tanggal_peminjaman
+        date tanggal_pengembalian
     }
 ```
